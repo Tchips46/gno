@@ -1534,6 +1534,10 @@ func (tv *TypedValue) ComputeMapKey(store Store, omitType bool) MapKey {
 		bz = append(bz, tv.T.TypeID().Bytes()...)
 		bz = append(bz, ':') // type/value separator
 	}
+	// println(tv.T.String(), tv.V.String())
+	println("=== ICI ===")
+	println(tv.T.String())
+	println(tv.T.String(), tv.V.String())
 	switch bt := baseOf(tv.T).(type) {
 	case PrimitiveType:
 		pbz := tv.PrimitiveBytes()
